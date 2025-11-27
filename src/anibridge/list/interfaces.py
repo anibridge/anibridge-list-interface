@@ -205,6 +205,8 @@ class ListEntry(ListEntity[ListProviderT], Protocol[ListProviderT]):
     def started_at(self) -> datetime | None:
         """Get the timestamp when the user started watching the entry.
 
+        Note: Timestamps must be timezone-aware.
+
         Returns:
             datetime | None: Timestamp when started, or None if not started.
         """
@@ -220,6 +222,8 @@ class ListEntry(ListEntity[ListProviderT], Protocol[ListProviderT]):
         """Get the timestamp when the user finished watching the entry.
 
         This is the timestamp when the entry was completed for the *first* time.
+
+        Note: Timestamps must be timezone-aware.
 
         Returns:
             datetime | None: Timestamp when finished, or None if not finished.
